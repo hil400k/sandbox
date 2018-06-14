@@ -8,8 +8,8 @@ export class AuthService {
   constructor(private http: Http) {
   }
 
-  login(credentials) { 
-   return this.http.post('/api/authenticate', 
+  login(credentials) {
+   return this.http.post('/api/authenticate',
       JSON.stringify(credentials))
      .map(resp => {
        let result = resp.json();
@@ -21,21 +21,18 @@ export class AuthService {
      })
   }
 
+  get currentUser() {
+    let token = localStorage.getItem('token');
+    if (!token) return null;
+
+    return new JwtHelper().decodeToken(token);
+  }
+
   logout() {
     localStorage.removeItem('token');
   }
 
   isLoggedIn() {
-    // let jwtHelper = new JwtHelper();
-    // let token = localStorage.getItem('token');
-    //
-    // if (!token) return false;
-    //
-    // let expirationDate = jwtHelper.getTokenExpirationDate(token);
-    // let isExpired = jwtHelper.isTokenExpired(token);
-    //
-    // return !isExpired;
-
     return tokenNotExpired();
   }
 }
