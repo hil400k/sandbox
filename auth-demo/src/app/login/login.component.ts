@@ -17,7 +17,7 @@ export class LoginComponent {
 
   signIn(credentials) {
     this.authService.login(credentials)
-      .subscribe(result => {
+      .subscribe(result => { console.info(result);
         if (result) {
           let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
           this.router.navigate([returnUrl || '/']);

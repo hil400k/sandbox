@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-no-access',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoAccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { console.info('eee'); }
 
   ngOnInit() {
+    this.router.navigate(['/', 'hello']);
   }
 
 }

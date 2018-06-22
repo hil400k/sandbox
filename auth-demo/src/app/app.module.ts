@@ -33,16 +33,20 @@ import {AdminAuthGuard} from "./services/admin-auth-guard.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      {
-        path: 'admin',
-        component: AdminComponent,
-        canActivate: [ AuthGuard, AdminAuthGuard ]
-      },
-      { path: 'login', component: LoginComponent },
-      { path: 'no-access', component: NoAccessComponent }
-    ])
+    // RouterModule
+
+    // ,
+    // RouterModule.forRoot([
+      // { path: '', component: HomeComponent },
+      // {
+      //   path: 'admin',
+      //   component: AdminComponent,
+      //   canActivate: [ AuthGuard, AdminAuthGuard ]
+      // },
+      // { path: 'login', component: LoginComponent },
+      // { path: 'no-access', component: NoAccessComponent }
+      // { path: '**', component: NoAccessComponent }
+    // ])
   ],
   providers: [
     OrderService,
