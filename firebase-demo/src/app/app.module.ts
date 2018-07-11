@@ -5,6 +5,7 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
 import { environment } from "../environments/environment";
 
 import { AppComponent } from './app.component';
+// import {AngularFirestore} from "angularfire2/firestore";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
+    // AngularFirestore
   ],
   providers: [],
   bootstrap: [AppComponent]
